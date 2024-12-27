@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: bb-app
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: 1-demo
+  url: https://github.com/singhkgurtej/bb-app-source.git

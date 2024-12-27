@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: zookeeper
+  name: zookeeper
+spec:
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: zookeeper
+  namespace: zookeeper
+spec:
+  interval: 1m0s
+  url: https://charts.pravega.io
