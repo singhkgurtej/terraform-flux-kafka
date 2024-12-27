@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kafka-helmrelease
+  namespace: kafka
+spec:
+  chart:
+    spec:
+      chart: kafka-operator
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: kafka-helm-source
+  interval: 1m0s

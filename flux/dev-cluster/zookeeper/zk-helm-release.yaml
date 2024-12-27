@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: zk-helmrelease
+  namespace: zookeeper
+spec:
+  chart:
+    spec:
+      chart: zookeeper-operator
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: zookeeper
+  interval: 1m0s

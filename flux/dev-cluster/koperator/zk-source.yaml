@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: kafka
+  name: kafka
+spec:
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: kafka-helm-source
+  namespace: kafka
+spec:
+  interval: 1m0s
+  url: https://kubernetes-charts.banzaicloud.com
