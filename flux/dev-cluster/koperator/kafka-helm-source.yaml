@@ -9,7 +9,7 @@ spec:
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: kafka-helm-source
+  name: kafka
   namespace: kafka
 spec:
   interval: 1m0s
